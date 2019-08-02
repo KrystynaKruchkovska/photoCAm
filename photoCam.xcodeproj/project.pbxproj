@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0429EB4722F4250B0045105F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429EB4622F4250B0045105F /* AppDelegate.swift */; };
-		0429EB4922F4250B0045105F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429EB4822F4250B0045105F /* ViewController.swift */; };
 		0429EB4C22F4250B0045105F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0429EB4A22F4250B0045105F /* Main.storyboard */; };
 		0429EB4E22F4250E0045105F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0429EB4D22F4250E0045105F /* Assets.xcassets */; };
 		0429EB5122F4250E0045105F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0429EB4F22F4250E0045105F /* LaunchScreen.storyboard */; };
 		0429EB5C22F4250E0045105F /* photoCamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429EB5B22F4250E0045105F /* photoCamTests.swift */; };
 		0429EB6722F4250E0045105F /* photoCamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429EB6622F4250E0045105F /* photoCamUITests.swift */; };
+		0429EB7622F427F10045105F /* AppContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429EB7522F427F10045105F /* AppContainerVC.swift */; };
+		0429EB7822F428540045105F /* PhotoListCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429EB7722F428540045105F /* PhotoListCollectionVC.swift */; };
+		0429EB7A22F428B70045105F /* PhotoFiltersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429EB7922F428B70045105F /* PhotoFiltersVC.swift */; };
+		0429EB7D22F42CE30045105F /* UIVIewController+Extansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429EB7C22F42CE30045105F /* UIVIewController+Extansions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		0429EB4322F4250B0045105F /* photoCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photoCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0429EB4622F4250B0045105F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0429EB4822F4250B0045105F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0429EB4B22F4250B0045105F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0429EB4D22F4250E0045105F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0429EB5022F4250E0045105F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		0429EB6222F4250E0045105F /* photoCamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photoCamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0429EB6622F4250E0045105F /* photoCamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoCamUITests.swift; sourceTree = "<group>"; };
 		0429EB6822F4250E0045105F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0429EB7522F427F10045105F /* AppContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainerVC.swift; sourceTree = "<group>"; };
+		0429EB7722F428540045105F /* PhotoListCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCollectionVC.swift; sourceTree = "<group>"; };
+		0429EB7922F428B70045105F /* PhotoFiltersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFiltersVC.swift; sourceTree = "<group>"; };
+		0429EB7C22F42CE30045105F /* UIVIewController+Extansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Extansions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +103,9 @@
 		0429EB4522F4250B0045105F /* photoCam */ = {
 			isa = PBXGroup;
 			children = (
+				0429EB7B22F42CBA0045105F /* Extensions */,
+				0429EB7422F427370045105F /* Controllers */,
 				0429EB4622F4250B0045105F /* AppDelegate.swift */,
-				0429EB4822F4250B0045105F /* ViewController.swift */,
 				0429EB4A22F4250B0045105F /* Main.storyboard */,
 				0429EB4D22F4250E0045105F /* Assets.xcassets */,
 				0429EB4F22F4250E0045105F /* LaunchScreen.storyboard */,
@@ -123,6 +130,25 @@
 				0429EB6822F4250E0045105F /* Info.plist */,
 			);
 			path = photoCamUITests;
+			sourceTree = "<group>";
+		};
+		0429EB7422F427370045105F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0429EB7522F427F10045105F /* AppContainerVC.swift */,
+				0429EB7722F428540045105F /* PhotoListCollectionVC.swift */,
+				0429EB7922F428B70045105F /* PhotoFiltersVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0429EB7B22F42CBA0045105F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0429EB7C22F42CE30045105F /* UIVIewController+Extansions.swift */,
+			);
+			name = Extensions;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +282,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0429EB4922F4250B0045105F /* ViewController.swift in Sources */,
+				0429EB7622F427F10045105F /* AppContainerVC.swift in Sources */,
+				0429EB7D22F42CE30045105F /* UIVIewController+Extansions.swift in Sources */,
 				0429EB4722F4250B0045105F /* AppDelegate.swift in Sources */,
+				0429EB7822F428540045105F /* PhotoListCollectionVC.swift in Sources */,
+				0429EB7A22F428B70045105F /* PhotoFiltersVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

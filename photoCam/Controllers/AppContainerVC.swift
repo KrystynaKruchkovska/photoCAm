@@ -12,8 +12,11 @@ class AppContainerVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        guard let photoListVC = self.children.first as? PhotoListCollectionVC else {
+            return
+        }
+        photoListVC.delegate = self
     }
     
     @IBAction func cameraBtnPressed(_ sender: Any) {
@@ -23,4 +26,20 @@ class AppContainerVC: UIViewController {
         
         self.addChildController(photoFiltersVC)
     }
+    
+    private func showImagePreview(_ previewImage: UIImage){
+        guard let photoPreviewVC = storyboard?.instantiateViewController(withIdentifier: "PhotoPreviewVC") as? PhotoPreviewVC else {
+            fatalError("PhotoPreviewVC not found")
+        }
+        photoPreviewVC.previewImage = previewImage
+        self.navigationController?.pushViewController(photoPreviewVC, animated: true)
+    }
+}
+
+extension AppContainerVC: PhotolistCollectionViewControllerDelegate {
+    func photoListDidSelectImage(selectedImage: UIImage) {
+        showImagePreview(selectedImage)
+    }
+    
+    
 }

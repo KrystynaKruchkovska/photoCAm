@@ -10,6 +10,7 @@ import UIKit
 
 class PhotoFiltersVC: UIViewController {
 
+    var image: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
 

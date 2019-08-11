@@ -36,5 +36,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>PhotoCam required access to photo library in order to work properly</string>
+	<key>NSCameraUsageDescription</key>
+	<string>PhotoCam required access to your camera to apply filters!</string>
 </dict>
 </plist>

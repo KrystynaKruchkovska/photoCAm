@@ -19,6 +19,7 @@
 		0429EB7D22F42CE30045105F /* UIVIewController+Extansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429EB7C22F42CE30045105F /* UIVIewController+Extansions.swift */; };
 		0429EB8322F436790045105F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429EB8222F436790045105F /* PhotoCollectionViewCell.swift */; };
 		04D3A7BC23004D6500F07288 /* PhotoPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3A7BB23004D6500F07288 /* PhotoPreviewVC.swift */; };
+		04D3A7BF2300596700F07288 /* FiltersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3A7BE2300596700F07288 /* FiltersService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		0429EB7C22F42CE30045105F /* UIVIewController+Extansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Extansions.swift"; sourceTree = "<group>"; };
 		0429EB8222F436790045105F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		04D3A7BB23004D6500F07288 /* PhotoPreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewVC.swift; sourceTree = "<group>"; };
+		04D3A7BE2300596700F07288 /* FiltersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		0429EB4522F4250B0045105F /* photoCam */ = {
 			isa = PBXGroup;
 			children = (
+				04D3A7BD2300592300F07288 /* Services */,
 				0429EB8122F436150045105F /* Cells */,
 				0429EB7B22F42CBA0045105F /* Extensions */,
 				0429EB7422F427370045105F /* Controllers */,
@@ -163,6 +166,14 @@
 				0429EB8222F436790045105F /* PhotoCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		04D3A7BD2300592300F07288 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04D3A7BE2300596700F07288 /* FiltersService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +312,7 @@
 				04D3A7BC23004D6500F07288 /* PhotoPreviewVC.swift in Sources */,
 				0429EB4722F4250B0045105F /* AppDelegate.swift in Sources */,
 				0429EB7822F428540045105F /* PhotoListCollectionVC.swift in Sources */,
+				04D3A7BF2300596700F07288 /* FiltersService.swift in Sources */,
 				0429EB7A22F428B70045105F /* PhotoFiltersVC.swift in Sources */,
 				0429EB8322F436790045105F /* PhotoCollectionViewCell.swift in Sources */,
 			);

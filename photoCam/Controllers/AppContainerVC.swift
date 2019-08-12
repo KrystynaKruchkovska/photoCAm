@@ -44,7 +44,7 @@ class AppContainerVC: UIViewController, UINavigationControllerDelegate {
             
         }
         photoFiltersVC.image = image
-        self.addChild(photoFiltersVC)
+        self.addChildController(photoFiltersVC)
     }
 }
 
@@ -57,7 +57,6 @@ extension AppContainerVC: PhotolistCollectionViewControllerDelegate {
 extension AppContainerVC: UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
         let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         showPhotoFiltersVC(for: originalImage)
         picker.dismiss(animated: true, completion: nil)

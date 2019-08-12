@@ -8,24 +8,29 @@
 
 import UIKit
 
-class PhotoFiltersVC: UIViewController {
+class PhotoFiltersVC: UIViewController, FilterScrollViewDelegate  {
 
     var image: UIImage?
+    var filtersService: FiltersServise!
+    
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var filtersScrollView: FiltersScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setup()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setup() {
+        self.filtersService = FiltersServise()
+        self.photoImageView.image = image
+        self.filtersScrollView.filterDelegate = self
     }
-    */
 
+
+    func filterScrollViewDidSelectFilter(filter: CIFilter) {
+        self.filtersService.applyFilter(filter: filter, to: image!) {
+            self.photoImageView.image = $0
+        }
+    }
+    
 }

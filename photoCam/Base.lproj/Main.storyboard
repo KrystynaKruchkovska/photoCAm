@@ -64,8 +64,9 @@
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gx3-or-eb4">
                                 <rect key="frame" x="0.0" y="88" width="414" height="672"/>
+                                <color key="backgroundColor" red="0.0" green="0.78039215689999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UI7-fQ-iz0">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UI7-fQ-iz0" customClass="FiltersScrollView" customModule="photoCam" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="761.5" width="414" height="134.5"/>
                                 <color key="backgroundColor" red="0.57919406890000003" green="0.0" blue="0.016262652748239362" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
@@ -86,6 +87,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dDT-3m-DK3"/>
                     </view>
+                    <connections>
+                        <outlet property="filtersScrollView" destination="UI7-fQ-iz0" id="Ff0-Gg-GZl"/>
+                        <outlet property="photoImageView" destination="gx3-or-eb4" id="onc-po-KQn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJT-LT-Tdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,7 +99,7 @@
         <!--Photo List CollectionVC-->
         <scene sceneID="vRt-ZD-Ufl">
             <objects>
-                <collectionViewController id="a4F-9W-pVC" customClass="PhotoListCollectionVC" customModule="photoCam" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="PhotoListCollectionVC" id="a4F-9W-pVC" customClass="PhotoListCollectionVC" customModule="photoCam" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AS8-03-fhd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -13,7 +13,7 @@ protocol PhotoFilterViewControllerDelegate {
     func photoFilterCancel()
 }
 
-class PhotoFiltersVC: UIViewController, FilterScrollViewDelegate  {
+class PhotoFiltersVC: UIViewController, FilterScrollViewDelegate, UIScrollViewDelegate  {
 
     var image: UIImage?
     var filtersService: FiltersServise!
@@ -55,6 +55,7 @@ class PhotoFiltersVC: UIViewController, FilterScrollViewDelegate  {
         self.filtersService = FiltersServise()
         self.photoImageView.image = image
         self.filtersScrollView.filterDelegate = self
+        self.filtersScrollView.delegate = self
     }
 
 
@@ -64,4 +65,11 @@ class PhotoFiltersVC: UIViewController, FilterScrollViewDelegate  {
         }
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 0 || scrollView.contentOffset.y < 0 {
+            scrollView.contentOffset.y = 0
+        }
+    }
 }
+
+

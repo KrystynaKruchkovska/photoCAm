@@ -19,6 +19,13 @@ class FiltersScrollView: UIScrollView {
 
     var filterDelegate: FilterScrollViewDelegate?
     private var filtersService: FiltersServise!
+    
+    override var frame: CGRect {
+        didSet {
+            print("||| SCROLL FRAME:\(frame)")
+        }
+    }
+    
     init(parentView: UIView, frame: CGRect) {
         super.init(frame: frame)
 
@@ -58,7 +65,7 @@ class FiltersScrollView: UIScrollView {
             filterImageView.tag = index
             filterImageView.isUserInteractionEnabled = true
             filterImageView.frame.origin.x = offset
-            filterImageView.center.y = self.frame.size.height / 2
+            filterImageView.center.y = self.frame.size.height / 2 - 10//(initial offset)
             
             offset += filterImageView.frame.size.width + filterImageView.frame.size.width / 4
             self.contentSize = CGSize(width: offset, height: self.frame.height)
@@ -69,6 +76,7 @@ class FiltersScrollView: UIScrollView {
         }
         
     }
+    
 }
 
 

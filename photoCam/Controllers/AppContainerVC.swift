@@ -17,7 +17,7 @@ class AppContainerVC: UIViewController, UINavigationControllerDelegate {
             return
         }
         photoListVC.delegate = self
-        print(AppContainerVC.identifier)
+       
     }
     
     @IBAction func cameraBtnPressed(_ sender: Any) {

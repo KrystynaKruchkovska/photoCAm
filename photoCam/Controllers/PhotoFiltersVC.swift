@@ -8,16 +8,47 @@
 
 import UIKit
 
+protocol PhotoFilterViewControllerDelegate {
+    func photoFilterDone()
+    func photoFilterCancel()
+}
+
 class PhotoFiltersVC: UIViewController, FilterScrollViewDelegate  {
 
     var image: UIImage?
     var filtersService: FiltersServise!
+    var delegate: PhotoFilterViewControllerDelegate?
+    
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var filtersScrollView: FiltersScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+  
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.delegate?.photoFilterCancel()
+    }
+    
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        
+        guard let selectedimage = photoImageView.image else {
+            return
+        }
+        
+        UIImageWriteToSavedPhotosAlbum(selectedimage, self, #selector(image(_: didFinishSavingWithError:contextInfo:)), nil)
+        self.delegate?.photoFilterDone()
+    }
+    
+    @objc func image(_ image: UIImage,didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        
+        if let error = error {
+            print(error.localizedDescription)
+        } else {
+            self.delegate?.photoFilterDone()
+        }
     }
     
     private func setup() {

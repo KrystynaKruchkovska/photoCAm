@@ -22,6 +22,7 @@
 		04D3A7BF2300596700F07288 /* FiltersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3A7BE2300596700F07288 /* FiltersService.swift */; };
 		04D3A7C223005D9900F07288 /* FiltersScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3A7C123005D9900F07288 /* FiltersScrollView.swift */; };
 		04D3A7C42300615900F07288 /* UIimageView+Extansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3A7C32300615900F07288 /* UIimageView+Extansions.swift */; };
+		04FAF8972302A82900EFBB5B /* UICollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FAF8962302A82900EFBB5B /* UICollectionViewCell+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		04D3A7BE2300596700F07288 /* FiltersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersService.swift; sourceTree = "<group>"; };
 		04D3A7C123005D9900F07288 /* FiltersScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersScrollView.swift; sourceTree = "<group>"; };
 		04D3A7C32300615900F07288 /* UIimageView+Extansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimageView+Extansions.swift"; sourceTree = "<group>"; };
+		04FAF8962302A82900EFBB5B /* UICollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			children = (
 				0429EB7C22F42CE30045105F /* UIVIewController+Extansions.swift */,
 				04D3A7C32300615900F07288 /* UIimageView+Extansions.swift */,
+				04FAF8962302A82900EFBB5B /* UICollectionViewCell+Extensions.swift */,
 			);
 			name = Extensions;
 			path = "New Group";
@@ -322,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0429EB7622F427F10045105F /* AppContainerVC.swift in Sources */,
+				04FAF8972302A82900EFBB5B /* UICollectionViewCell+Extensions.swift in Sources */,
 				0429EB7D22F42CE30045105F /* UIVIewController+Extansions.swift in Sources */,
 				04D3A7BC23004D6500F07288 /* PhotoPreviewVC.swift in Sources */,
 				0429EB4722F4250B0045105F /* AppDelegate.swift in Sources */,

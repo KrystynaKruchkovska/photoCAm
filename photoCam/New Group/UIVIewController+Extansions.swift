@@ -19,4 +19,8 @@ extension UIViewController {
         childVC.didMove(toParent: self)
         
     }
+    
+    static var identifier: String {
+        return "\(self)"
+    }
 }

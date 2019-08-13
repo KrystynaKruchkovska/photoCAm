@@ -17,6 +17,7 @@ class AppContainerVC: UIViewController, UINavigationControllerDelegate {
             return
         }
         photoListVC.delegate = self
+        print(AppContainerVC.identifier)
     }
     
     @IBAction func cameraBtnPressed(_ sender: Any) {
@@ -31,7 +32,7 @@ class AppContainerVC: UIViewController, UINavigationControllerDelegate {
     }
     
     private func showImagePreview(_ previewImage: UIImage){
-        guard let photoPreviewVC = storyboard?.instantiateViewController(withIdentifier: "PhotoPreviewVC") as? PhotoPreviewVC else {
+        guard let photoPreviewVC = storyboard?.instantiateViewController(withIdentifier: PhotoPreviewVC.identifier) as? PhotoPreviewVC else {
             fatalError("PhotoPreviewVC not found")
         }
         photoPreviewVC.previewImage = previewImage
@@ -39,12 +40,24 @@ class AppContainerVC: UIViewController, UINavigationControllerDelegate {
     }
     
     private func showPhotoFiltersVC(for image: UIImage){
-        guard let photoFiltersVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotoFiltersVC") as? PhotoFiltersVC else {
+        guard let photoFiltersVC = self.storyboard?.instantiateViewController(withIdentifier: PhotoFiltersVC.identifier) as? PhotoFiltersVC else {
             fatalError("PhotoFiltersVC not found")
             
         }
         photoFiltersVC.image = image
+        photoFiltersVC.delegate = self
         self.addChildController(photoFiltersVC)
+    }
+    
+    private func showPhotosList() {
+        self.view.subviews.forEach{
+            $0.removeFromSuperview()
+        }
+        guard let photoListVC = self.storyboard?.instantiateViewController(withIdentifier: PhotoListCollectionVC.identifier) as? PhotoListCollectionVC else {
+            return
+        }
+        photoListVC.delegate = self
+        self.addChildController(photoListVC)
     }
 }
 
@@ -65,5 +78,17 @@ extension AppContainerVC: UIImagePickerControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+    
+}
+
+extension AppContainerVC: PhotoFilterViewControllerDelegate {
+    func photoFilterDone() {
+        showPhotosList()
+    }
+    
+    func photoFilterCancel() {
+       
+    }
+    
     
 }
